@@ -16,6 +16,12 @@ class Handler extends ExceptionHandler
         //
     ];
 
+    if ($exception instanceof ModelNotFoundException && $request->wantsJson()) {
+    return response()->json([
+      'error' => 'Resource not found'
+    ], 404);
+  }
+
     /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
