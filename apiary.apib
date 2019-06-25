@@ -1,0 +1,90 @@
+FORMAT: 1A
+HOST: http://wechalet.local/
+
+# wechalet api 
+
+Wechalet offre cette api pour ces clients.
+
+## Questions Collection [/api]
+
+### users [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "r7809ewr",
+                "name": "2015-08-05T08:40:51.620Z",
+                "propeties": [
+                    {
+                        "id": "Swift",
+                        "location": 2048
+                    }, {
+                        "id": "Python",
+                        "location": 1024
+                    }
+                ]
+            },
+            {
+                "id": "r7809ewr",
+                "name": "2015-08-05T08:40:51.620Z",
+                "propeties": [
+                    {
+                        "id": "Swift",
+                        "location": 2048
+                    }, {
+                        "id": "Python",
+                        "location": 1024
+                    }
+                ]
+            }
+            
+        ]
+
+### users/ [POST]
+
+create a new user.
+
++ Request (application/json)
+
+        {
+            "firstnme": "my name is Wahid",
+            "hobbi": testing a new api documentation",
+            "age": 25
+            "user": {
+                "first",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            }
+        }
+
++ Response 201 (application/json)
+
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
+            
++ Response 409 (application/json)
+
+          {
+                "user name": "is required"
+               
+        }
