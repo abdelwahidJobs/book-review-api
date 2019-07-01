@@ -1,90 +1,521 @@
 FORMAT: 1A
-HOST: http://wechalet.local/
+HOST: http://api.amalet.local/api/
 
-# wechalet api 
+# amalyet api 
 
-Wechalet offre cette api pour ces clients.
+Amalyet offre cette api pour ces clients.
 
-## Questions Collection [/api]
-
-### users [GET]
-
+## offers [/offers]
+### offers [GET] 
 + Response 200 (application/json)
 
         [
             {
-                "id": "r7809ewr",
-                "name": "2015-08-05T08:40:51.620Z",
-                "propeties": [
-                    {
-                        "id": "Swift",
-                        "location": 2048
-                    }, {
-                        "id": "Python",
-                        "location": 1024
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "design code",
+                "slug" : "project-52",
+                "code" : "113151321",
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
                     }
-                ]
+                
+                
             },
             {
-                "id": "r7809ewr",
-                "name": "2015-08-05T08:40:51.620Z",
-                "propeties": [
-                    {
-                        "id": "Swift",
-                        "location": 2048
-                    }, {
-                        "id": "Python",
-                        "location": 1024
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "developpement WEB",
+                "slug" : "project-52",
+                "code" : "113151321"
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
                     }
-                ]
+                
+                
             }
             
+            
         ]
-
-### users/ [POST]
-
-create a new user.
-
+### offers/ [POST]
 + Request (application/json)
 
         {
-            "firstnme": "my name is Wahid",
-            "hobbi": testing a new api documentation",
-            "age": 25
-            "user": {
-                "first",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            }
+                "name": "offfer 1",
+                "description" : "this is an offer",
         }
 
 + Response 201 (application/json)
 
 
+            
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "offfer 1",
+                "description" : "this is an offer",
+               
+           }
+           
+            
+        
+            
++ Response 422 (application/json)
+
+        {
+            "name": "required",
+            "description": "required"
+        }
+
+## offers/{offre} [/offers/offer]
+### offers/offer [GET] 
++ Response 200 (application/json)
+
+            {
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "design code",
+                "slug" : "project-52",
+                "code" : "113151321",
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    }
+                
+                
+            }
+### offers/offer [DELETE] 
++ Response 200 (application/json)
+
+            {
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "design code",
+                "slug" : "project-52",
+                "code" : "113151321",
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    }
+                
+                
+            }
+
+## projects [/projects]
+### projects [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "api amalyet",
+                "slug" : "project-52",
+                "code" : "113151321",
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    }, 
+                "manager"  : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "type" : "value_project",    
+                "staus" : "In Progress",
+                "client" :  {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "admin" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "static_budget" : 2555, 
+                "start_date" : "2019/01/02", 
+                "end_date" : "2019/04/25",
+                "offer_id" : 1,
+                "is_favorite" : true, 
+                "tags" : [],
+                "tasks": [
                     {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
+                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
+                        "name": "the first task",
+                        "description" : "bla bla bla bla ....",
+                        "planned_start_date": "2019/02/02", 
+                        "planned_start_date": "2019/02/02",
+                        "creator" : "", 
+                        "assigne_to" : []
                     }
                 ]
             }
             
+        ]
+### projects/ [POST]
+
+
++ Request (application/json)
+
+        {
+                "name": "api amalyet",
+                "slug" : "project-52",
+                "code" : "113151321",
+                "description" : "full api for amalyet......",
+                "manager_id"  :"511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "type" : "value_project",    
+                "client_id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "admin_id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "static_budget" : 2555, 
+                "start_date" : "2019/01/02", 
+                "end_date" : "2019/04/25",
+                "offer_id" : 1,
+                "is_favorite" : true
+        }
+
++ Response 201 (application/json)
+
+
+            
+            {
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "api amalyet",
+                "slug" : "project-52",
+                "code" : "113151321"
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    }, 
+                "manager"  : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "type" : "value_project",    
+                "staus" : "In Progress",
+                "client" :  {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "admin" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "static_budget" : 2555, 
+                "start_date" : "2019/01/02", 
+                "end_date" : "2019/04/25",
+                "offer_id" : 1,
+                "is_favorite" : true, 
+                "tags" : [],
+                
+            }
+            
+        
+            
 + Response 409 (application/json)
 
-          {
-                "user name": "is required"
-               
+        {
+            "filled": "required"
         }
+
+## projects/{project} [/projects/{project}]       
+### projects/{project} [GET]
+
++ Parameters
+    + project (string) - UUId of the project 
+
++ Response 200 (application/json)
+
+
+
+           {
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "api amalyet",
+                "slug" : "project-52",
+                "code" : "113151321"
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    }, 
+                "manager"  : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "type" : "value_project",    
+                "staus" : "In Progress",
+                "client" :  {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "admin" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "static_budget" : 2555, 
+                "start_date" : "2019/01/02", 
+                "end_date" : "2019/04/25",
+                "offer_id" : 1,
+                "is_favorite" : true, 
+                "tags" : [],
+                "tasks": [
+                    {
+                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
+                        "name": "the first task",
+                        "description" : "bla bla bla bla ....",
+                        "planned_start_date": "2019/02/02", 
+                        "planned_start_date": "2019/02/02",
+                        "creator" : "",
+                        "assigne_to" : []
+                    }
+                ]
+            }
+### projects/{project}[PUT]        
+
+       
++ Parameters
+    + project (string) - UUId of the project 
+
++ Request (application/json)
+
+        {
+                "project information": "offfer 1",
+                
+        }
+
++ Response 200 (application/json)
+
+
+
+           {
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "api amalyet",
+                "slug" : "project-52",
+                "code" : "113151321",
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    }, 
+                "manager"  : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "type" : "value_project",    
+                "staus" : "In Progress",
+                "client" :  {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "admin" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "static_budget" : 2555, 
+                "start_date" : "2019/01/02", 
+                "end_date" : "2019/04/25",
+                "offer_id" : 1,
+                "is_favorite" : true, 
+                "tags" : [],
+                "tasks": [
+                    {
+                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
+                        "name": "the first task",
+                        "description" : "bla bla bla bla ....",
+                        "planned_start_date": "2019/02/02", 
+                        "planned_start_date": "2019/02/02",
+                        "creator" : "",
+                        "assigne_to" :[]
+                        
+                    }
+                ]
+            }
+### projects/{project}/[DELETE]   
++ Parameters
+    + project (string) - UUId of the project 
+
++ Response 200 (application/json)
+
+
+
+           {
+                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                "name": "api amalyet",
+                "slug" : "project-52",
+                "code" : "113151321",
+                "description" : "full api for amalyet ......",
+                "creator" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    }, 
+                "manager"  : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "type" : "value_project",    
+                "staus" : "In Progress",
+                "client" :  {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "admin" : {
+                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
+                        "name" : "creator ",
+                        "email" : "....@amalyet.com",
+                        "avatar" : ""
+                    },
+                "static_budget" : 2555, 
+                "start_date" : "2019/01/02", 
+                "end_date" : "2019/04/25",
+                "offer_id" : 1,
+                "is_favorite" : true, 
+                "tags" : [],
+                "tasks": [
+                    {
+                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
+                        "name": "the first task",
+                        "description" : "bla bla bla bla ....",
+                        "planned_start_date": "2019/02/02", 
+                        "planned_end_date": "2019/02/02",
+                        "creator" :  "",
+                        "assigne_to" :[]
+                        
+                    }
+                ]
+            }
+
+## projects/{project}/favorite [/projects/{project}/favorite]            
+### projects/{project}/favorite [GET]   
++ Parameters
+    + project (string) - UUId of the project 
+
++ Response 200 (application/json)
+
+           {
+              
+            }
+### projects/{project}/favorite [PUT]   
++ Parameters
+    + project (string) - UUId of the project 
+
++ Response 200 (application/json)
+
+           {
+              
+            }
+            
+## projects/{project}/share [/projects/{project}/share]
+### projects/{project}/share [GET]   
++ Parameters
+    + project (string) - UUId of the project 
+
++ Response 200 (application/json)
+
+           {
+              
+            }
+### projects/{project}/share [PUT]   
++ Parameters
+    + project (string) - UUId of the project 
+
++ Response 200 (application/json)
+
+           {
+              
+            }
+
+## projects/{project}/tasks [/projects/{project}/tasks]
+### projects/{project}/tasks [GET]
++ Response 200 (Application/json)
+
+               [
+                    {
+                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
+                        "name": "the first task",
+                        "description" : "bla bla bla bla ....",
+                        "planned_start_date": "2019/02/02", 
+                        "planned_start_date": "2019/02/02",
+                        "creator" : "", 
+                        "assigne_to" : []
+                    },
+                     {
+                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
+                        "name": "the first task",
+                        "description" : "bla bla bla bla ....",
+                        "planned_start_date": "2019/02/02", 
+                        "planned_start_date": "2019/02/02",
+                        "creator" : "", 
+                        "assigne_to" : []
+                    }
+                ]
+### projects/{project}/tasks [POST] 
++ Response 200 (Application/json)
+
+               {
+                 
+                }
+
+## projects/{project}/tasks/{task} [/projects/{project}/taks/{task}]
+### projects/{project}/tasks/{task} [GET] 
++ Response 200 (Application/json)
+
+               {
+                 
+                }
+### projects/{project}/tasks/{task} [PUT]
++ Response 200 (Application/json)
+
+               {
+                 
+                }
+### projects/{project}/tasks/{task} [DELETE]
++ Response 200 (Application/json)
+
+               {
+                 
+                }
