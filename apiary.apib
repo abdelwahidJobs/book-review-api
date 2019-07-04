@@ -112,263 +112,390 @@ Amalyet offre cette api pour ces clients.
 
 ## projects [/projects]
 ### projects [GET]
++ Request
+    
+    + Headers
+    
+            Authorization: Bearer token 
+
 + Response 200 (application/json)
 
-        [
-            {
-                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                "name": "api amalyet",
-                "slug" : "project-52",
-                "code" : "113151321",
-                "description" : "full api for amalyet ......",
-                "creator" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    }, 
-                "manager"  : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    },
-                "type" : "value_project",    
-                "staus" : "In Progress",
-                "client" :  {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    },
-                "admin" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    },
-                "static_budget" : 2555, 
-                "start_date" : "2019/01/02", 
-                "end_date" : "2019/04/25",
-                "offer_id" : 1,
-                "is_favorite" : true, 
-                "tags" : [],
-                "tasks": [
+        {
+        "data": [
                     {
-                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
-                        "name": "the first task",
-                        "description" : "bla bla bla bla ....",
-                        "planned_start_date": "2019/02/02", 
-                        "planned_start_date": "2019/02/02",
-                        "creator" : "", 
-                        "assigne_to" : []
+                          "id": "bb402901-7d2f-4163-b7ec-695e155b082a",
+                          "name": "sssgd",
+                          "description": "bla bla bla",
+                          "code": "Amalyet-2514",
+                          "creator": {
+                            "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                            "username": "superadmin",
+                            "email": "superadmin@amalyet.com",
+                            "roles": [
+                              {
+                                "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                                "name": "superadmin",
+                                "created_at": "2019-07-03 11:40:48",
+                                "permissions": []
+                              }
+                            ],
+                            "created_at": "2019-07-03 11:40:48"
+                                              },
+                          "manager": {
+                            "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                            "username": "superadmin",
+                            "email": "superadmin@amalyet.com",
+                            "roles": [
+                              {
+                                "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                                "name": "superadmin",
+                                "created_at": "2019-07-03 11:40:48",
+                                "permissions": []
+                              }
+                            ],
+                            "created_at": "2019-07-03 11:40:48"
+                          },
+                      "admin": {
+                        "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                        "username": "superadmin",
+                        "email": "superadmin@amalyet.com",
+                        "roles": [
+                          {
+                            "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                            "name": "superadmin",
+                            "created_at": "2019-07-03 11:40:48",
+                            "permissions": []
+                          }
+                        ],
+                        "created_at": "2019-07-03 11:40:48"
+                      },
+                      "static_buget": 8448,
+                      "static_start_date": "2019-07-03 15:56:02",
+                      "static_end_date": "2019-07-03 15:56:02",
+                      "offer": {
+                        "id": "677d1711-8ebd-47e6-97d7-c3ead28c8eeb",
+                        "name": "offer 1",
+                        "description": null,
+                        "type": "Offer",
+                        "activities": [],
+                        "budgets": [],
+                        "created_at": "2019-07-03 15:40:49",
+                        "updated_at": "2019-07-03 15:40:49"
+                      },
+                      "is_favorite": false,
+                      "created_at": "2019-07-03 15:56:02"
                     }
+    
+        
+            
                 ]
             }
-            
-        ]
-### projects/ [POST]
-
-
-+ Request (application/json)
+ 
+ 
++ Response 401 (application/json)
 
         {
-                "name": "api amalyet",
-                "slug" : "project-52",
-                "code" : "113151321",
-                "description" : "full api for amalyet......",
-                "manager_id"  :"511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                "type" : "value_project",    
-                "client_id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                "admin_id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                "static_budget" : 2555, 
-                "start_date" : "2019/01/02", 
-                "end_date" : "2019/04/25",
-                "offer_id" : 1,
-                "is_favorite" : true
+             "message": "Unauthenticated."
         }
+        
+            
+### projects/ [POST]
++ Request 
+
+    + Headers
+
+            Authorization: Bearer token 
+
+    + Body
+
+            {
+                "name" :"project title", 
+                "description" : "Description is not required", 
+                "code" :"Project-2514", 
+                "status" :"ready" ,
+                "static_buget" : 8448,
+                "is_favorite" : false,
+                "offer_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                "manager_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd", 
+                "admin_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                "client_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cdr"
+                "static_start_date" : "2020-07-03 15:56:02"
+                "static_end_date" : "2022-07-03 15:56:02"
+            }
+            
+
 
 + Response 201 (application/json)
 
-
-            
             {
-                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                "name": "api amalyet",
-                "slug" : "project-52",
-                "code" : "113151321"
-                "description" : "full api for amalyet ......",
-                "creator" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    }, 
-                "manager"  : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
+                  "data": {
+                    "id": "dc937cf2-fd42-4a76-a0b4-0dfcf381fd75",
+                    "name": "sssgd",
+                    "description": "bla bla bla",
+                    "code": "Amalyet-2514",
+                    "creator": {
+                      "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                      "username": "superadmin",
+                      "email": "superadmin@amalyet.com",
+                      "roles": [
+                        {
+                          "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                          "name": "superadmin",
+                          "created_at": "2019-07-03 11:40:48",
+                          "permissions": []
+                        }
+                      ],
+                      "created_at": "2019-07-03 11:40:48"
                     },
-                "type" : "value_project",    
-                "staus" : "In Progress",
-                "client" :  {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
+                    "manager": {
+                      "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                      "username": "superadmin",
+                      "email": "superadmin@amalyet.com",
+                      "roles": [
+                        {
+                          "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                          "name": "superadmin",
+                          "created_at": "2019-07-03 11:40:48",
+                          "permissions": []
+                        }
+                      ],
+                      "created_at": "2019-07-03 11:40:48"
                     },
-                "admin" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
+                    "admin": {
+                      "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                      "username": "superadmin",
+                      "email": "superadmin@amalyet.com",
+                      "roles": [
+                        {
+                          "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                          "name": "superadmin",
+                          "created_at": "2019-07-03 11:40:48",
+                          "permissions": []
+                        }
+                      ],
+                      "created_at": "2019-07-03 11:40:48"
                     },
-                "static_budget" : 2555, 
-                "start_date" : "2019/01/02", 
-                "end_date" : "2019/04/25",
-                "offer_id" : 1,
-                "is_favorite" : true, 
-                "tags" : [],
+                    "static_buget": 8448,
+                    "static_start_date": {
+                      "date": "2019-07-04 08:42:19.380710",
+                      "timezone_type": 3,
+                      "timezone": "UTC"
+                    },
+                    "static_end_date": {
+                      "date": "2019-07-04 08:42:19.380725",
+                      "timezone_type": 3,
+                      "timezone": "UTC"
+                    },
+                    "offer": {
+                      "id": "677d1711-8ebd-47e6-97d7-c3ead28c8eeb",
+                      "name": "offer 1",
+                      "description": null,
+                      "type": "Offer",
+                      "activities": [],
+                      "budgets": [],
+                      "created_at": "2019-07-03 15:40:49",
+                      "updated_at": "2019-07-03 15:40:49"
+                    },
+                    "is_favorite": true,
+                    "created_at": "2019-07-04 08:42:19"
+                  }
+                }
                 
             }
             
         
             
-+ Response 409 (application/json)
++ Response 422 (application/json)
 
         {
-            "filled": "required"
+          "message": "The given data was invalid.",
+          "errors": {
+            "name": [
+              "The name field is required."
+            ],
+            "description": [
+              "The description field is required."
+            ],
+            "code": [
+              "The code field is required."
+            ],
+            "client_id": [
+              "The client id field is required."
+            ],
+            "is_favorite": [
+              "The is favorite field is required."
+            ]
+          }
         }
++ Response 401 (application/json)
+
+        {
+             "message": "Unauthenticated."
+        }
+
 
 ## projects/{project} [/projects/{project}]       
 ### projects/{project} [GET]
++ Request 
+
+    + Headers
+
+            Authorization: Bearer token 
 
 + Parameters
     + project (string) - UUId of the project 
 
 + Response 200 (application/json)
 
-
-
-           {
-                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                "name": "api amalyet",
-                "slug" : "project-52",
-                "code" : "113151321"
-                "description" : "full api for amalyet ......",
-                "creator" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    }, 
-                "manager"  : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
+            {
+                  "data": {
+                    "id": "dc937cf2-fd42-4a76-a0b4-0dfcf381fd75",
+                    "name": "sssgd",
+                    "description": "bla bla bla",
+                    "code": "Amalyet-2514",
+                    "creator": {
+                      "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                      "username": "superadmin",
+                      "email": "superadmin@amalyet.com",
+                      "roles": [
+                        {
+                          "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                          "name": "superadmin",
+                          "created_at": "2019-07-03 11:40:48",
+                          "permissions": []
+                        }
+                      ],
+                      "created_at": "2019-07-03 11:40:48"
                     },
-                "type" : "value_project",    
-                "staus" : "In Progress",
-                "client" :  {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
+                    "manager": {
+                      "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                      "username": "superadmin",
+                      "email": "superadmin@amalyet.com",
+                      "roles": [
+                        {
+                          "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                          "name": "superadmin",
+                          "created_at": "2019-07-03 11:40:48",
+                          "permissions": []
+                        }
+                      ],
+                      "created_at": "2019-07-03 11:40:48"
                     },
-                "admin" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
+                    "admin": {
+                      "id": "90709005-de54-4863-9088-bbedf5262ef7",
+                      "username": "superadmin",
+                      "email": "superadmin@amalyet.com",
+                      "roles": [
+                        {
+                          "id": "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                          "name": "superadmin",
+                          "created_at": "2019-07-03 11:40:48",
+                          "permissions": []
+                        }
+                      ],
+                      "created_at": "2019-07-03 11:40:48"
                     },
-                "static_budget" : 2555, 
-                "start_date" : "2019/01/02", 
-                "end_date" : "2019/04/25",
-                "offer_id" : 1,
-                "is_favorite" : true, 
-                "tags" : [],
-                "tasks": [
-                    {
-                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
-                        "name": "the first task",
-                        "description" : "bla bla bla bla ....",
-                        "planned_start_date": "2019/02/02", 
-                        "planned_start_date": "2019/02/02",
-                        "creator" : "",
-                        "assigne_to" : []
-                    }
-                ]
+                    "static_buget": 8448,
+                    "static_start_date": {
+                      "date": "2019-07-04 08:42:19.380710",
+                      "timezone_type": 3,
+                      "timezone": "UTC"
+                    },
+                    "static_end_date": {
+                      "date": "2019-07-04 08:42:19.380725",
+                      "timezone_type": 3,
+                      "timezone": "UTC"
+                    },
+                    "offer": {
+                      "id": "677d1711-8ebd-47e6-97d7-c3ead28c8eeb",
+                      "name": "offer 1",
+                      "description": null,
+                      "type": "Offer",
+                      "activities": [],
+                      "budgets": [],
+                      "created_at": "2019-07-03 15:40:49",
+                      "updated_at": "2019-07-03 15:40:49"
+                    },
+                    "is_favorite": true,
+                    "created_at": "2019-07-04 08:42:19"
+                  }
+                }
+                
             }
-### projects/{project}[PUT]        
-
-       
-+ Parameters
-    + project (string) - UUId of the project 
-
-+ Request (application/json)
+            
+        
++ Response 401 (application/json)
 
         {
-                "project information": "offfer 1",
-                
+             "message": "Unauthenticated!"
         }
+      
+                    
++ Response 404 (application/json)
 
-+ Response 200 (application/json)
+        {
+             "message": "Resource not found!"
+        }
+        
+### projects/{project}[PUT]        
++ Request 
 
+    + Headers
 
+            Authorization: Bearer token 
+    
+    + Body
 
-           {
-                "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                "name": "api amalyet",
-                "slug" : "project-52",
-                "code" : "113151321",
-                "description" : "full api for amalyet ......",
-                "creator" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    }, 
-                "manager"  : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    },
-                "type" : "value_project",    
-                "staus" : "In Progress",
-                "client" :  {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa ",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    },
-                "admin" : {
-                        "id" : "511fbd50-1f22-40ce-9abb-2d168f8729fa",
-                        "name" : "creator ",
-                        "email" : "....@amalyet.com",
-                        "avatar" : ""
-                    },
-                "static_budget" : 2555, 
-                "start_date" : "2019/01/02", 
-                "end_date" : "2019/04/25",
-                "offer_id" : 1,
-                "is_favorite" : true, 
-                "tags" : [],
-                "tasks": [
-                    {
-                        "id": "511fbd50-1f22-40ce-9abb-2d168f8729fa",
-                        "name": "the first task",
-                        "description" : "bla bla bla bla ....",
-                        "planned_start_date": "2019/02/02", 
-                        "planned_start_date": "2019/02/02",
-                        "creator" : "",
-                        "assigne_to" :[]
-                        
-                    }
-                ]
+            {
+                "name" :"project title", 
+                "description" : "Description is not required", 
+                "code" :"Project-2514", 
+                "status" :"ready" ,
+                "static_buget" : 8448,
+                "is_favorite" : false,
+                "offer_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                "manager_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd", 
+                "admin_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                "client_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cdr"
+                "static_start_date" : "2020-07-03 15:56:02"
+                "static_end_date" : "2022-07-03 15:56:02"
             }
+
++ Parameters
+    + project (string) - UUId of the project  
+    
+    
+
++ Response 422 (application/json)
+
+
+            {
+              "message": "The given data was invalid.",
+              "errors": {
+                "name": [
+                  "The name field is required."
+                ],
+                "description": [
+                  "The description field is required."
+                ],
+                "code": [
+                  "The code field is required."
+                ],
+                "client_id": [
+                  "The client id field is required."
+                ],
+                "is_favorite": [
+                  "The is favorite field is required."
+                ]
+              }
+            }
+           
++ Response 401 (application/json)
+
+        {
+             "message": "Unauthenticated!"
+        }
+        
 ### projects/{project}/[DELETE]   
 + Parameters
     + project (string) - UUId of the project 
@@ -429,6 +556,17 @@ Amalyet offre cette api pour ces clients.
                 ]
             }
 
++ Response 401 (application/json)
+
+        {
+             "message": "Unauthenticated!"
+        }
+        
++ Response 404 (application/json)
+
+        {
+             "message": "Unauthenticated!"
+        }
 ## projects/{project}/favorite [/projects/{project}/favorite]            
 ### projects/{project}/favorite [GET]   
 + Parameters
@@ -450,15 +588,36 @@ Amalyet offre cette api pour ces clients.
             }
             
 ## projects/{project}/share [/projects/{project}/share]
-### projects/{project}/share [GET]   
-+ Parameters
-    + project (string) - UUId of the project 
+### projects/{project}/share [put]   
++ Request 
 
-+ Response 200 (application/json)
+    + Headers
 
-           {
-              
+            Authorization: Bearer token 
+    
+    + Body
+
+            {
+                "name" :"project title", 
+                "description" : "Description is not required", 
+                "code" :"Project-2514", 
+                "status" :"ready" ,
+                "static_buget" : 8448,
+                "is_favorite" : false,
+                "offer_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                "manager_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd", 
+                "admin_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cd",
+                "client_id" : "845a0b2a-9678-41a8-ba1d-3be4e4e081cdr"
+                "static_start_date" : "2020-07-03 15:56:02"
+                "static_end_date" : "2022-07-03 15:56:02"
             }
+
++ Parameters
+    + project (string) - UUId of the project  
+    
+
+
+        
 ### projects/{project}/share [PUT]   
 + Parameters
     + project (string) - UUId of the project 
